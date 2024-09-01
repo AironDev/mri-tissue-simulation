@@ -1,0 +1,128 @@
+<html>
+
+
+<head>
+	<title>MRI Physics: Tissue Contrast in MRI - XRayPhysics</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+
+</head>
+
+<body>
+
+	
+	<div class="cover-container container p-3 mx-auto ">
+		<header class="masthead row">
+			<div class="col-md-12">
+				
+				<h3 class="masthead-brand">MRI Physics</h3>
+				<nav class="nav nav-masthead justify-content-center">
+					<a class="nav-link active" href="#">Home</a>
+					<a class="nav-link" href="#">Notes</a>
+					<a class="nav-link" href="#">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main role="main" class="inner cover ">
+			<div class="row">
+
+                <h1>FORMULAS </h1>
+
+                <div class="col-md-10">
+
+                    <div class="mt-5">
+                        <h3 class="cover-heading">signalGray</h3>
+                        <p class=" mb-3" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. ferendis.</p>
+                    </div>
+
+					<div class="card">
+
+                        <div class="card-header">If IR is checked</div>
+                        <div class="card-body">
+                            <script type="math/asciimath" id="MathJax-Element-180"> signalGray = grayN * (1 - 2 * exp((-TI) / (grayT1)) + exp((-TR) / (grayT1))) * exp((-TE)/(grayT2)); </script>
+                        </div>
+                        <div class="card-header">If IR is is not checked</div>
+						<div class="card-body" >
+                            <script type="math/asciimath" id="MathJax-Element-182"> signalGray  = grayN * (1 - exp( (-TR)/(grayT1) ) ) * exp( (-TE)/(grayT2) ) </script>
+						</div>
+					</div>
+
+
+
+                    <div class="mt-5">
+                        <h3 class="cover-heading">signalWhite</h3>
+                        <p class=" mb-3" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. ferendis.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">If IR is checked</div>
+                        <div class="card-body">
+                            <script type="math/asciimath" id="MathJax-Element-183"> signalWhite = whiteN * (1 - 2 * exp((-TI) / (whiteT1)) + exp((-TR) / (whiteT1))) * exp((-TE) / (whiteT2)); </script>
+                        </div>
+                        <div class="card-header">If IR is is not checked</div>
+						<div class="card-body" >
+                            <script type="math/asciimath" id="MathJax-Element-184">
+                                signalWhite = whiteN * (1 - Math.exp((-TR)/(whiteT1))) * Math.exp((-TE)/(whiteT2));
+                            </script>
+						</div>
+					</div>
+
+
+                    <div class="mt-5">
+                        <h3 class="cover-heading">signalCSF</h3>
+                        <p class=" mb-3" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. ferendis.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">If IR is checked</div>
+                        <div class="card-body">
+                            <script type="math/asciimath" id="MathJax-Element-185"> signalCSF = csfN * (1 - 2 * exp((-TI) / (csfT1)) + exp((-TR)/(csfT1))) * exp((-TE)/(csfT2)); </script>
+                        </div>
+                        <div class="card-header">If IR is is not checked</div>
+						<div class="card-body" >
+                            <script type="math/asciimath" id="MathJax-Element-186">
+                                signalCSF =  csFN * (1 - exp((-TR)/(csfT1))) * exp((-TE)/(csfT2))
+                            </script>
+						</div>
+					</div>
+
+
+				</div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <div class="card-header">
+                            Defined Constants
+                        </div>
+						<div class="card-body" >
+                            <code class="language-javascript">
+                              
+                                grayT1 = 940; <br>
+                                grayT2 = 100;  <br>
+                                grayN = 0.75; <br>
+                                whiteT1 = 550; <br>
+                                whiteT2 = 90; <br>
+                                whiteN = 0.65;<br>
+                                csfT1 = 4210; <br>
+                                csfT2 = 2100; <br>
+                                csfN = 1;<br>
+                            </code>
+						</div>
+					</div>
+                </div>
+            
+			</div>
+            
+		</main>
+	</div>
+    
+
+</body>
+
+</html>
